@@ -1,0 +1,289 @@
+rst <- resid(fit)/(sigma * sqrt(1-hatvalues(fit)))
+rstd <- resid(fit)/(sigma * sqrt(1-hatvalues(fit)))
+head(cbind(rstd, rstandard(fit)))
+plot(fit, which=3)
+plot(fit, which=2)
+sigma1 <- sum(fitno$resid^2)/fitno$df
+sigma1 <- sqrt(sum(fitno$resid^2))/fitno$df
+sigma1 <- sqrt(deviance(fitno)/df.residual(fitno))
+resid(fit)[1]/sigma1*sqrt(1-hatvalues(fit)[1])
+resid(fit)[1]/(sigma1*sqrt(1-hatvalues(fit)[1]))
+head(rstudent(fit))
+dy <- predict(fitno, out2) - predict(fit, out2)
+sum(dy^2)/(2*sigma^2)
+plot(fit, which=5)
+q()
+unlink(".RData")
+q()
+unlink(".RData")
+q()
+library(swirl)
+swirl()
+fit <- lm(y ~ x, out2)
+plot(fit, which=1)
+fitno <- lm(y ~ x, out2[-1,])
+plot(fit, which=1)
+plot(fitno, which=1)
+coef(fit) - coef(fitno)
+head(dfbeta(fit))
+resno <- out2[1, "y"] - predict(fitno, out2[1,])
+1 - resid(fit)[1]/resno
+head(hatvalues(fit))
+sigma <- sqrt(deviance(fit)/(fit)$df)
+rstd <- resid(fit)/(sigma*sqrt(1-hatvalues(fit)))
+head(cbind(rstd, rstandard(fit)))
+plot(fit, which=3)
+plot(fit, which=2)
+sigma1 <- sqrt(deviance(fitno)/(fitno)$df)
+resid(fit)[1]/(sigma1*sqrt(1-hatvalues(fit)[1]))
+head(rstudent(fit))
+dy <- predict(fitno, out2) - predict(fit, out2)
+sum(dy^2)/(2*sigma^2)
+plot(fit, which=5)
+q()
+library(swirl)
+swirl()
+rgp1()
+rgp2()
+head(Swiss)
+head(swiss)
+mdl <- lm(Fertility ~ ., Swiss)
+mdl <- lm(Fertility ~ ., swiss)
+vif(mdl)
+mdl2 <- lm(Fertility ~ Agriculture + Education + Catholic + Infant.Mortality, swiss)
+vif(mdl2)
+x1c <- simbias()
+apply(x1c, 1, mean)
+fit1 <- lm(Fertility ~ Agriculture, swiss)
+fit3 <- lm(Fertility ~ Agriculture + Examination + Education, swiss)
+anova(fit1, fit3)
+deviance(fit3)
+d <- deviance(fit3)/43
+n <- (deviance(fit1) - deviance(fit3))/2
+n/d
+pf(n/d, 2, 43, lower.tail=FALSE)
+shapiro.test(fit3$residuals)
+anova(fit1, fit3, fit5, fit6)
+q()
+library(swirl)
+swirl()
+ravenData
+mdl <- glm(ravenWinNum ~ ravenScore, family="binomial", ravenData)
+lodds <- predict(mdl, data.frame(ravenScore=c(0,3,6)))
+ecp(lodds)/(1+exp(lodds))
+exp(lodds)/(1+exp(lodds))
+summary(mdl)
+exp(confint(mdl))
+anova(mdl)
+qchisq(0.95, 1)
+q()
+library(swirl)
+swirl()
+ravenData
+mdl <- glm(ravenWinNum ~ ravenScore, family="binomial", ravenData)
+lodds <- predict(mdl, data.frame(ravenScore=c(0,3,6)))
+exp(lodds)/(1+exp(lodds))
+summary(mdl)
+exp(confint(mdl))
+anova(mdl)
+qchisq(0.95, 1)
+var(rpois(1000,50))
+nxt()
+head(hits)
+class(hits[,'date'])
+as.integer(head(hits[,'date']))
+mdl <- glm(visits ~ date, family='poisson', hits)
+summary(mdl)
+exp(confint(mdl, 'date'))
+which.max(hits[,'visits'])
+hits[704,]
+lambda <- mdl$fitted.values[704]
+qpois(.95, lambda)
+mdl2 <- glm(visits ~ data, family='poisson',offset=log(visits+1), hits)
+mdl2 <- glm(visits ~ date, family='poisson',offset=log(visits+1), hits)
+mdl2 <- glm(simplystats ~ date, family='poisson',offset=log(visits+1), hits)
+qpois(.95, mdl2$fitted.values[704])
+q()
+install.packages("caret")
+library(cart)
+library(caret)
+install.packages("caret")
+q()
+install.packages("Caret")
+install.packages("http://cran.r-project.org/src/contrib/caret_6.0-47.tar.gz")
+nstall.packages(pkgs = "caret", dependencies = c("Depends", "Imports"))
+install.packages(pkgs = "caret", dependencies = c("Depends", "Imports"))
+nstall.packages('lattice')#
+> library(lattice)#
+> install.packages('ggplot2')#
+> library(ggplot2)#
+> install.packages('lme4')#
+> library(lme4)#
+> install.packages('BradleyTerry2')#
+> library(BradleyTerry2)#
+> install.packages("caret", dependencies = c("Depends", "Suggests"))#
+> library(caret)
+install.packages('lattice')#
+> library(lattice)#
+> install.packages('ggplot2')#
+> library(ggplot2)#
+> install.packages('lme4')#
+> library(lme4)#
+> install.packages('BradleyTerry2')#
+> library(BradleyTerry2)#
+> install.packages("caret", dependencies = c("Depends", "Suggests"))#
+> library(caret)
+q()
+install.packages("caret")
+install.packages(pkgs = "caret", #
+                 dependencies = c("Depends", "Imports"))
+install.packages('lattice')
+install.packages("lattice")
+library(lattice)
+library(ggplot2)
+install.package("ggplot2")
+install.packages("ggplot2")
+q()
+install.packages(pkgs = "caret", #
+                 dependencies = c("Depends", "Imports"))
+library(caret)
+library(kernlab)
+install.packages("kernlab")
+library(kernlab)
+data(spam)
+dim(spam)
+head(spam)
+summary(spam)
+q()
+setwd("homework/EU-regional-inequality/")
+data <- read.csv("nama_r_e3gdp_1_Data.csv")
+head(data)
+View(data)
+summary(data)
+str(data)
+dataPL <- data[,GEO="Poland"]
+dataPL <- data[,GEO=="Poland"]
+dataPL <- data[GEO=="Poland"]
+dataPL <- data[GEO=="Poland",]
+dim(data)
+dimnames(data)
+data <- data[,data$GEO == "Poland"]
+data <- data[data$GEO == "Poland"]
+data <- data[data$GEO == "Poland",]
+data <- read.csv("nama_r_e3gdp_1_Data.csv")
+dataPL <- data[data$GEO == "Poland",]
+head(dataPL)
+str(dataPl)
+str(dataPL)
+summary(dataPL)
+dim(dataPL)
+tail(dataPL)
+plot(TIME, VALUE, data = dataPL)
+plot(data$TIME, data$Value)
+dataPL
+?plot
+plot(data$TIME, data$Value, type = "l")
+plot(dataPL$TIME, dataPL$Value)
+?plot
+plot(dataPL$TIME, dataPL$Value, type = "b")
+plot(dataPL$TIME, dataPL$Value, type = "b")
+line(lm(dataPL$Value ~ dataPL$TIME))
+abline(lm(dataPL$Value ~ dataPL$TIME))
+?abline
+abline(lm(dataPL$Value ~ dataPL$TIME), col = "red")
+plot(dataPL$TIME, dataPL$Value, main = "GDP per capita")
+plot(dataPL$TIME, dataPL$Value, type = "b", main = "GDP per capita", xlab = "years", ylab = "GDP per capita")
+fit <- lm(dataPL$Value ~ dataPL$TIME)
+summary(fit)
+plot(dataPL$TIME, dataPL$Value, type = "b", main = "GDP per capita", xlab = "years", ylab = "GDP per capita")
+abline(lm(dataPL$Value ~ dataPL$TIME), col = "red")
+?plot
+plot(dataPL$TIME, dataPL$Value, type = "p", main = "GDP per capita", xlab = "years", ylab = "GDP per capita")
+names(data$GEO)
+names(data[,GEO])
+names(data)
+unique(data$GEO)
+dataCz <- data[data$GEO == "Czech Republic")
+dataCz <- data[data$GEO == "Czech Republic"]
+dataCz <- data[data$GEO == "Czech Republic",]
+dataCz
+plot(dataCz$TIME, dataCz$Value, type = "b", main = "GPD per capita by years",#
+     xlab = "years", ylab = "GDP per capita (TEUR)")#
+#
+#adding simple regression line#
+#
+abline(lm(dataCz$Value ~ dataCz$TIME), col = "red")
+unique(data$GEO)
+dataSl <- data[data$GEO == "Slovakia",]
+dataSl
+dataPL
+plot(dataSl$TIME, dataSl$Value, type = "b", main = "GDP per Capita Slovakia",#
+     xlab = "years", ylab = "GDP per capita")#
+#
+#adding simple regression line#
+#
+abline(lm(dataSl$Value ~ dataSl$TIME), col = "red")
+unique(data$GEO)
+dataHr <- data[data$GEO == "Hungary",]#
+#
+#plotting GDP data#
+#
+plot(dataHr$TIME, dataHr$Value, type = "b", main = "GDP per Capita Hungary",#
+     xlab = "years", ylab = "GDP per capita")#
+#
+#adding simple regression line#
+#
+abline(lm(dataHr$Value ~ dataHr$TIME), col = "red")
+dataHr
+dataAll <- data[data$GEO == c("Poland", "Czech Republic", "Slovakia", "Hungary"),]
+dim(dataAll)
+dataAll
+dim(data)
+dataAll <- data[,c(data$TIME, data$GEO, data$Value)]
+dataAll <- data[,c("TIME", "GEO", "Value")]
+dim(dataAll)
+head(dataAll)
+dataAll <- dataAll[data$GEO == c("Poland", "Slovakia", "Czech Republic", "Hungary"),]
+dim(dataAll)
+dataAll
+dataAll <- data[,c("TIME", "GEO", "Value")]
+dataF <- dataAll[dataAll$GEO == "Poland",]
+dim(dataF)
+dataF <- dataF + dataAll[dataAll$GEO == "Czech Republic",]
+dataF <- dataAll[dataAll$GEO == "Poland" & dataAll$GEO == "Hungary",]
+dim(dataF)
+dataF <- dataAll[dataAll$GEO == "Poland" && dataAll$GEO == "Hungary",]
+dim(dataF)
+dataF <- dataAll[dataAll$GEO == "Poland" | dataAll$GEO == "Hungary",]
+dim(dataF)
+dataF <- dataAll[dataAll$GEO == "Poland" | dataAll$GEO == "Hungary" | dataAll$GEO == "Slovakia" | dataAll$GEO == "Czech Republic",]
+dim(dataF)
+dataF
+plot(dataF$TIME, dataF$Value, col=data$GEO)
+plot(dataF$TIME, dataF$Value, col=data$GEO, type = "l")
+plot(dataF$TIME, dataF$Value, col=data$GEO, type = "b")
+plot(dataF$TIME, dataF$Value, col=data$GEO)
+plot(dataF$TIME, dataF$Value, col=data$GEO, menu=TRUE)
+plot(dataF$TIME, dataF$Value, col=data$GEO, labels = data$GEO)
+plot(dataF$TIME, dataF$Value, col=data$GEO, menu=TRUE)
+plot(dataF$TIME, dataF$Value, col=data$GEO)
+plot(dataF$TIME, dataF$Value, col=dataF$GEO)
+plot(dataF$TIME, dataF$Value, col=dataF$GEO, type = "l")
+plot(dataF$TIME, dataF$Value, col=dataF$GEO)
+names(data)
+head(data)
+data2 <- read.csv("nama_r_e3gdp_Label.csv")
+head(data2)
+dim(data2)
+names(data2)
+plot(data$TIME, data$Value, type="l")
+plot(data$TIME, data$Value, type="l", col = data$GEO)
+plot(data$TIME, data$Value, type="l", col = data[,GEO])
+plot(data$TIME, data$Value, type="l", col = data[,"GEO"])
+plot(data$TIME, data$Value, type="l", by=data$GEI)
+plot(data$TIME, data$Value, type="l", by=data$GEO)
+?col
+?par
+plot(data$TIME, data$Value, type="l", lwd=2, by=data$GEO)
+plot(data$TIME, data$Value, type="l", lwd=2, col=data$GEO)
+q()
